@@ -2,15 +2,10 @@ import sys, os, time, imp, glob, subprocess, platform
 from appium import webdriver
 from desired_capabilities import get_desired_capabilities
 
-
 def setUp(self):
     set_config(self)
-
     desired_caps = get_desired_capabilities(self.platform_version, self.device_name, self.apk_filename)
-
     self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
-
-    # self.command_runner = CommandRunner()
 
 def set_config(self):
     config_filename = 'app/config.py'
@@ -46,7 +41,12 @@ def set_config(self):
     # clean
     # clean(self)
 
-
+def make_sure_path_exists(path):
+    try:
+        os.makedirs(path)
+    except OSError as exception:
+        if exception.errno != errno.EEXIST:
+            raise
 
 def uiautomator2_server_patch(config):
     # uiautomator2 server patch
@@ -76,7 +76,6 @@ def uiautomator2_server_patch(config):
         if stderrdata != '':
             print "\nPatch Failed: %s" % patch
 
-
 def clean(self):
     print "Device cleaning....."
     cleans = [
@@ -98,10 +97,3 @@ def clean(self):
         print "\nadb command Failed: %s" % home_key
     else:
         print "OK"
-
-def make_sure_path_exists(path):
-    try:
-        os.makedirs(path)
-    except OSError as exception:
-        if exception.errno != errno.EEXIST:
-            raise

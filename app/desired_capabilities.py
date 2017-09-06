@@ -20,7 +20,6 @@ PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
 )
 
-
 def get_desired_capabilities( platform_version, device_name, app):
     desired_caps = {
         'platformName': 'Android',

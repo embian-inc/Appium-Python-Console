@@ -59,7 +59,13 @@ class LabeledAction(LabeledElement):
 
     @property
     def input_type(self):
-        return 'password' if self.element['password'] == 'true' else self.element['input-type'].lower()
+        if self.element['password'] == 'true':
+            return 'password'
+
+        elif self.element.has_attr('input-type'):
+            return self.element['input-type'].lower()
+
+        return ''
 
 
     @property

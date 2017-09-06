@@ -73,7 +73,7 @@ class ActionTable(object):
     #     },
     # ]
     def __init__(self, xml_data, webview=None):
-        self.tree = BeautifulSoup(xml_data, "xml", from_encoding="utf-8")
+        self.tree = BeautifulSoup(xml_data, "xml")
         self.webview = webview
         self.action_groups = []
         self._init()
@@ -164,10 +164,10 @@ class ActionTable(object):
         if isinstance(element, WebviewElement):
             if 'action' in element and element['action'] != 'none':
                 return element['action']
-        
+
         if element['enabled'] == u'false':
             return None
-            
+
         #editable
         if element['class'] in self.INPUT_WIDGETS:
             return 'input'

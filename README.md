@@ -1,8 +1,19 @@
 # Appium-Python-Console
 
-## 1. Install
+Appium-Python-Console은 Appium의 python-client로 Mobile Application을 테스트하기 위한 Test Script를 작성하는데 있어서 다양한 Appium driver methods를 Console을 통해 테스트해 볼 수 있는 Console 프로그램 입니다.
+Appium 설치 전 이라면 [Appium Setup Manual](https://github.com/embian-inc/Appium-Python-Console/blob/master/README-AppiumSetup.md)을 통해 먼저 Appium설치를 완료해 주시기 바랍니다.
 
-1) Git Clone
+
+
+## 1. Install Appium-Python-Console
+
+1) Git Clone 및 Appium-Python-Console폴더로 이동
+
+```
+git clone git@github.com:embian-inc/Appium-Python-Console.git
+
+cd Appium-Python-Console
+```
 
 2) Virtualenv set up
 

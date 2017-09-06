@@ -1,22 +1,9 @@
-# Help on WebDriver in module appium.webdriver.webdriver object:
-#
-# class WebDriver(selenium.webdriver.remote.webdriver.WebDriver)
-#  Method resolution order:
-#      WebDriver
-#      selenium.webdriver.remote.webdriver.WebDriver
-#      __builtin__.object
-#
-#  Methods defined here:
-#
-#  __init__(self, command_executor='http://127.0.0.1:4444/wd/hub', desired_capabilities=None, browser_profile=None, proxy=None, keep_alive=False)
-#
-# # {
-# #     "Name": "String(Methods_Name)",
-# #     "Desc": [ "String(Description)" ],
-# #     "Args": { Dict({ arg_key:arg_desc }) },
-# #     "Usage": "String(Usage)"
-# # }
-
+# {
+#     "Name": "String(Methods_Name)",
+#     "Desc": [ "String(Description)" ],
+#     "Args": { Dict({ arg_key:arg_desc }) },
+#     "Usage": "String(Usage)"
+# }
 
 METHODS = [
     {
