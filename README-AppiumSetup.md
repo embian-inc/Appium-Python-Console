@@ -2,29 +2,37 @@
 
 
 ## 1. Appium Desktop Download
------------------------------
+Link : [http://appium.io/]
+
+1) 위 링크로 이동
+
+2) Download Appium 을 통해 Appium Desktop download 페이지로 이동
+
+3) Appium Desktop 파일 다운 로드 후 실행
+
+
+
 
 ## 2. Appium Github Clone
--------------------------
 
-Link : [https://github.com/appium/appium][https://github.com/appium/appium]
+Link : [https://github.com/appium/appium]
 
-* Git을 이용하여 Appium Project Clone
+1) Git을 이용하여 Appium Project Clone
 ```
 git clone https://github.com/appium/appium.git﻿﻿
 ```
 
-* Clone 한 Appium 폴더로 이동
+2) Clone 한 Appium 폴더로 이동
 ```
 cd appium
 ```
 
-* NPM Install
+3) NPM Install
 ```
 npm install
 ```
 
-* Appium 실행 [ node .(dot) ]
+4) Appium 실행 [ node .(dot) ]
 ```
 node .
 
@@ -57,4 +65,35 @@ sudo xcode-select --switch /Library/Developer/CommandLineTools
 
 
 ## 3. Appium Github Release Download
-------------------------------------
+
+Link : [https://github.com/appium/appium/releases]
+
+1) 위 링크에서 원하는 버전의 Appium 압축 파일 다운로드
+
+2) 압축풀기
+```
+cd PATH/TO/DOWNLOAD/FOLDER
+
+// tar.gz 압축풀기 명령어
+tar -zxvf appium-1.6.x.tar.gz TARGET/PATH
+
+ex) tar -zxvf appium-1.6.3.tar.gz ~/Documents/appium-1.6.3
+```
+
+3) 해당 폴더로 이동
+
+```
+cd appium-1.6.3
+```
+
+4) NPM Install
+
+```
+npm install
+```
+
+5) Appium 실행 [ node .(dot) ]
+
+```
+node .
+```
