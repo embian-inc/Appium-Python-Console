@@ -76,6 +76,7 @@ class ActionCollector(object):
                 'label': action.label,
                 'type': context,
                 'screen_id': screen_id,
+                'resource-id': action.resource_id
                 # 'obj_actions':ActionObject(cnt,
                 #        action.desc,
                 #        action.atype,

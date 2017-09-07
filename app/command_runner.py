@@ -36,23 +36,23 @@ class CommandRunner(object):
         self.stored_opt = {'detail': False}
 
     #show actions
-    def print_action_table(self, pagedata):
+    def print_action_table(self, pagedata, detail=None):
         actions = pagedata['actions'] if 'actions' in pagedata else []
         action_groups = pagedata['action_groups'] if 'action_groups' in pagedata else []
 
         print '\n'
         table = []
-        header = ['No.', 'DESC', 'LABEL', 'ACTION', 'INPUT-TYPE', 'BOUNDS', 'CONTEXT']
-        if self.stored_opt['detail']:
+        header = ['No.', 'DESC', 'LABEL', 'ACTION', 'INPUT-TYPE', 'RESOURCE-ID', 'BOUNDS', 'CONTEXT']
+        if self.stored_opt['detail'] or detail == 'd':
             header.append('XPATH')
 
         table.append(header)
         for cnt, el in enumerate(actions):
             input_type = '-' if el['input-type'] == 'null' else el['input-type']
-            if self.stored_opt['detail']:
-                table.append(['%03d' % cnt, el['desc'], el['label'], el['action'], input_type, el['bounds'], el['type'], el['xpath']])
+            if self.stored_opt['detail'] or detail == 'd':
+                table.append(['%03d' % cnt, el['desc'], el['label'], el['action'], input_type, el['resource-id'], el['bounds'], el['type'], el['xpath']])
             else:
-                table.append(['%03d' % cnt, el['desc'], el['label'], el['action'], input_type, el['bounds'], el['type']])
+                table.append(['%03d' % cnt, el['desc'], el['label'], el['action'], input_type, el['resource-id'], el['bounds'], el['type']])
 
         at = AsciiTable(table, title="Action List")
         # at.inner_row_border = True
@@ -143,9 +143,6 @@ class CommandRunner(object):
         except:
             if command.is_help(choice):
                 idx= -1
-            elif command.is_apc_mode(choice):
-                print 'exit'
-                return True
 
             elif command.is_page_source(choice):
                 soup = BeautifulSoup(data['driver'].page_source, "xml")

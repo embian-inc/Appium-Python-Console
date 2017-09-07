@@ -69,7 +69,7 @@ class ActionTable(object):
     #         'content-desc': '....',
     #         'type': 'WEBVIEW_XXXX',
     #         'class': tag_name,
-    #
+    #         'resource-id': '...'
     #     },
     # ]
     def __init__(self, xml_data, webview=None):

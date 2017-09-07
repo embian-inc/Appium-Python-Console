@@ -100,9 +100,11 @@ class AppiumPythonConsole(unittest.TestCase):
                 print "  bounds: %s" % e.attrs["bounds"]
         print '\n'
 
-    def _capable_action_table(self):
+    def _capable_action_table(self, detail = None):
+        self.native_only = True
         data = self.get_pagedata()
-        self.command_runner.print_action_table(data)
+
+        self.command_runner.print_action_table(data, detail=detail)
 
     def _methods(self, item=None):
         idx = 0

@@ -38,7 +38,7 @@ HELP_MSG = """
          mode='h' - Extract Clickable Elements by Xml and Chromedriver (for Hybrid App or WebApp) [Default]
          mode='n' - Extract Clickable Elements by only Xml
      Usage:
-         manual_test() - Default Mode (Hybrid)
+         manual_test() - Default Mode
          manual_test(node='n') = Native Mode
 
 

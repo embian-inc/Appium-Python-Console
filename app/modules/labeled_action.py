@@ -45,8 +45,8 @@ class LabeledAction(LabeledElement):
 
     @property
     def resource_id(self):
-        if isinstance(self.element, WebviewElement):
-            return ''
+        # if isinstance(self.element, WebviewElement):
+        #     return ''
 
         return self.element['resource-id']
 
