@@ -36,8 +36,8 @@ PLATFORM_VERSION = '6.0'
 #APK_FILE_NAME = 'nl.apk'
 #APK_FILE_NAME = 'line.apk'
 # APK_FILE_NAME = 'musinsa.apk'
-
-APK_FILE_NAME = 'findjob.apk'
+APK_FILE_NAME = 'min.apk'
+# APK_FILE_NAME = 'findjob.apk'
 
 ##################################################################
 # Appium Desired Capabilities Static Values
@@ -46,6 +46,6 @@ APK_FILE_NAME = 'findjob.apk'
 AUTO_GRANT_PERMISSIONS = True
 ANDROID_INSTALL_TIMEOUT = 360000
 AUTOMATION_NAME = 'uiautomator2'
-NEW_COMMAND_TIMEOUT = 3600
+NEW_COMMAND_TIMEOUT = 360000
 APP_WAIT_ACTIVITY = '*'
 NO_SIGN = True
