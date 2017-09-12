@@ -54,7 +54,6 @@ class LabeledAction(LabeledElement):
     def target(self):
         if isinstance(self.element, WebviewElement):
             return self.element['target']
-
         return self.element
 
     @property
@@ -66,6 +65,10 @@ class LabeledAction(LabeledElement):
             return self.element['input-type'].lower()
 
         return ''
+
+    @property
+    def e_class(self):
+        return self.element['class']
 
 
     @property
