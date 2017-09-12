@@ -65,7 +65,6 @@ class ActionCollector(object):
             context = self.NATIVE_CONTEXT
             if 'type' in action.element:
                 context = action.element['type']
-
             actions.append({
                 'target': action.target,
                 'action': action.atype,
@@ -76,7 +75,9 @@ class ActionCollector(object):
                 'label': action.label,
                 'type': context,
                 'screen_id': screen_id,
-                'resource-id': action.resource_id
+                'resource-id': action.resource_id,
+                'content-desc': action.content_desc,
+                'widget': action.e_class
                 # 'obj_actions':ActionObject(cnt,
                 #        action.desc,
                 #        action.atype,
@@ -105,7 +106,6 @@ class ActionCollector(object):
             'apk_filename': self.apk_filename,
             'apk_file_dir': self.apk_file_dir,
             'doc_save_dir': self.doc_save_dir,
-            # 'test_id': self.test_id,
             'screen_id': screen_id,
             'behavior' : behavior,
             # 'obj_action_groups': obj_action_groups,
