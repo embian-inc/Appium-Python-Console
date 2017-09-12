@@ -8,10 +8,11 @@ def setUp(self):
     self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 
 def set_config(self):
-    config_filename = 'app/config.py'
+    config_filename = os.path.join('app','config.py')
     self.native_only = False
+    self.lang = 'en-us'
+    self.mode = 'APC'
     for v in sys.argv:
-        print v
         if '--config' in v:
             t = v.split('=')
             if len(t) == 2:
@@ -22,9 +23,16 @@ def set_config(self):
             t = v.split('=')
             if len(t) == 2:
                 self.adb_cmd = t[1]
+        if '-kor' in v:
+            self.lang = 'ko-kr'
+        if '--mode' in v:
+            t = v.split('=')
+            if len(t) == 2 and t[1] == 'm':
+                self.mode = 'Manual_Test'
+            if len(t) == 2 and t[1] == 'dev':
+                self.mode = 'dev'
 
-    now_dir = os.path.dirname(os.path.realpath('__file__'))
-    config_file = os.path.join(now_dir, config_filename)
+    config_file = os.path.join(config_filename)
     config = imp.load_source('config', config_file)
 
     self.platform_name = config.PLATFORM_NAME
@@ -32,13 +40,13 @@ def set_config(self):
     self.platform_version = config.PLATFORM_VERSION
     self.apk_filename = config.APK_FILE_NAME
     self.save_dir = '%s' % ( time.strftime('%y-%m-%d_%H%M%S', time.localtime()) )
-    self.doc_save_dir = '%s/%s/%s' % (config.DOC_SAVE_DIR, self.apk_filename, self.save_dir)
+    self.doc_save_dir = os.path.join(config.DOC_SAVE_DIR, self.apk_filename, self.save_dir)
     make_sure_path_exists(self.doc_save_dir)
 
-    # uiautomator2 server patch
+    ## uiautomator2 server patch
     # uiautomator2_server_patch(config)
 
-    # clean
+    ## clean
     # clean(self)
 
 def make_sure_path_exists(path):
