@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from bs4 import BeautifulSoup, Tag
-from modules.rect import Bounds, Point
+from apptestai_modules.utils.rect import Bounds, Point
 import traceback
 
 from modules.action_table import ActionTable
@@ -164,25 +164,6 @@ def clean_invisible_nodes(node):
 
         clean_invisible_nodes(c)
 
-
-# def xml_doc_save(data, idx=None):
-#     if data['now_context_num'] != 0:
-#         data['driver'].switch_to.context(data['contexts'][0])
-#         data['now_context_num'] = 0;
-#     if idx is None :
-#         filename = '%s-last.xml' % (data['apk_filename'])
-#     else:
-#         filename = '%s-%s.xml' % (data['apk_filename'], str(idx))
-#
-#     xml_filename = os.path.join(data['doc_save_dir'], filename)
-#     xml = ''
-#     with codecs.open(xml_filename, 'w', 'utf-8') as xml_file:
-#         xml = data['driver'].page_source
-#         xml_file.write(xml)
-#     print '# XML File Save OK'
-#     return xml
-
-
 def xml_doc_save(self, data):
     if data['now_context_num'] != 0:
         data['driver'].switch_to.context(data['contexts'][0])
@@ -199,8 +180,6 @@ def xml_doc_save(self, data):
     return xml
 
 
-
-
 def _remove_webview(soup):
     webviews = soup.find_all('android.webkit.WebView')
     [w.extract() for w in webviews]
@@ -208,7 +187,7 @@ def _remove_webview(soup):
 
 def to_clean_xml(xml, without_webview=False):
     # clean webview
-    soup = BeautifulSoup(xml, "xml")
+    soup = BeautifulSoup(xml, "xml", from_encoding="utf-8")
     if without_webview:
         _remove_webview(soup)
 
@@ -221,7 +200,7 @@ def get_actions(driver, xml, without_webview=True, context='NATIVE_APP'):
     actions = []
 
     # clean webview
-    soup = BeautifulSoup(xml, "xml")
+    soup = BeautifulSoup(xml, "xml", from_encoding="utf-8")
     if without_webview:
         _remove_webview(soup)
 
@@ -249,7 +228,7 @@ def get_actions_only_native(driver, xml, context='NATIVE_APP'):
     actions = []
 
     # clean webview
-    soup = BeautifulSoup(xml, "xml")
+    soup = BeautifulSoup(xml, "xml", from_encoding="utf-8")
 
     if has_visible_node(soup):
         clean_invisible_nodes(soup.hierarchy)
