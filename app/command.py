@@ -8,10 +8,10 @@ command = {
     'REFRESH'               : { 'cmd': ['refresh', 'r'], 'desc': '액션 리스트 다시 가져오기' },
     'SCROLL_UP'             : { 'cmd': ['sup', 'scrollup', 'up'], 'desc': '스크롤 UP' },
     'SCROLL_DOWN'           : { 'cmd': ['sdown', 'scrolldown', 'down'], 'desc': '스크롤 Down'},
-    'SAVE'                  : { 'cmd': ['save', 's', '-save'], 'desc': '현재 페이지의 XML, HTML, Screen Shot 이미지를 파일로 저장하기' },
-    'XML'                   : { 'cmd': ['xml'], 'desc': '현재 페이지의 XML을 파일로 저장하기' },
-    'HTML'                  : { 'cmd': ['html'], 'desc': '현재 페이지의 HTML을 파일로 저장하기' },
-    'SCREENSHOT'            : { 'cmd': ['screenshot', 'ss'], 'desc': '현재 페이지의 Screen Shot 이미지를 파일로 저장하기' },
+    'SAVE_ALL'                  : { 'cmd': ['save_all'], 'desc': '현재 페이지의 XML, HTML, Screen Shot 이미지를 파일로 저장하기' },
+    'XML'                   : { 'cmd': ['xml_save'], 'desc': '현재 페이지의 XML을 파일로 저장하기' },
+    'HTML'                  : { 'cmd': ['html_save'], 'desc': '현재 페이지의 HTML을 파일로 저장하기' },
+    'SCREENSHOT'            : { 'cmd': ['screenshot_save', 'ss_save'], 'desc': '현재 페이지의 Screen Shot 이미지를 파일로 저장하기' },
     'EXIT'                  : { 'cmd': ['exit', 'quit', 'q'], 'desc': '테스트 종료' }
 }
 
@@ -82,7 +82,7 @@ def is_scroll_down( arg):
 
 # 현재 화면의 XML, HTML, Screenshot Image File Save
 def is_save_all( arg):
-    cmd = command['SAVE']['cmd']
+    cmd = command['SAVE_ALL']['cmd']
     if arg in cmd:
         return True
     else:
