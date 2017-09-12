@@ -73,7 +73,7 @@ class ActionTable(object):
     #     },
     # ]
     def __init__(self, xml_data, webview=None):
-        self.tree = BeautifulSoup(xml_data, "xml")
+        self.tree = BeautifulSoup(xml_data, "xml", from_encoding="utf-8")
         self.webview = webview
         self.action_groups = []
         self._init()
@@ -139,13 +139,12 @@ class ActionTable(object):
             w_element = WebviewElement(element)
             #TODO: xml과 형태를 맞추기 위해
             w_element['text'] = ''
-            w_element['resource-id'] = ''
+            # w_element['resource-id'] = ''
             w_element['instance'] = '0'
             w_element['password'] = 'false'
             w_element['selected'] = 'false'
             if w_element['input-type'] == 'password':
                 w_element['password'] = 'true'
-
             bounds = Bounds.to_bounds(w_element['bounds'])
             if self._unbounded(bounds):
                 continue
