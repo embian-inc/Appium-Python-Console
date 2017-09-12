@@ -377,6 +377,7 @@ function set_element_data(el, inputType, action, type, className, el_id) {
         "content-desc": getDesc(el).trim().slice(0, 15).replace(/\t/g, '').replace(/\n/g, '').trim(),
         "type": input_type["type"] !== null ? input_type["type"] : type,
         "class": className,
+        // "": className ? 'className: ' + className : el.tagName ? 'tagName: ' + el.tagName : '-' ,
         "resource-id": el_id
     };
 }
@@ -532,23 +533,22 @@ for (var i = 0; i < els.length; i++) {
 
 
     // Action List Element & Dom Element List Save
-
     if (size_check && input_type.type === "text" && point_el_check) {
-        var element_data = set_element_data(el, input_type.input_type, "input", arguments[0], 'input', el_id);
+        var element_data = set_element_data(el, input_type.input_type, "input", 'WEBVIEW', 'input', el_id);
         check_interect_data_and_set_element(r_el, el, element_data);
 
         continue;
     }
 
     if (size_check && input_type.type === "checkbox" && point_el_check) {
-        var element_data = set_element_data(el, input_type.input_type, "checkbox", arguments[0], 'view', el_id);
+        var element_data = set_element_data(el, input_type.input_type, "checkbox", 'WEBVIEW', 'view', el_id);
         check_interect_data_and_set_element(r_el, el, element_data);
 
         continue;
     }
 
     if (size_check && input_type.type === "etc" && point_el_check) {
-        var element_data = set_element_data(el, input_type.input_type, "spinner", arguments[0], 'spinner', el_id);
+        var element_data = set_element_data(el, input_type.input_type, "spinner", 'WEBVIEW', 'spinner', el_id);
         check_interect_data_and_set_element(r_el, el, element_data);
 
         continue;
@@ -562,7 +562,7 @@ for (var i = 0; i < els.length; i++) {
     }
 
     if (size_check && select_tag_check && (has_click_event_check || has_on_click_event_check) && point_el_check) {
-        var element_data = set_element_data(el, "null", "spinner", arguments[0], 'spinner', el_id);
+        var element_data = set_element_data(el, "null", "spinner", 'WEBVIEW', 'spinner', el_id);
         check_interect_data_and_set_element(r_el, el, element_data);
 
         continue;
@@ -570,7 +570,7 @@ for (var i = 0; i < els.length; i++) {
 
     if (size_check && ((a_tag_check && href_check) || href_check || has_click_event_check || has_on_click_event_check || input_type.type === "click") && point_el_check) {
         if (!equal_bounds_el_check(r_el, el)) {
-            var element_data = set_element_data(el, "null", "click", arguments[0], 'button', el_id);
+            var element_data = set_element_data(el, "null", "click", 'WEBVIEW', 'button', el_id);
             check_interect_data_and_set_element(r_el, el, element_data);
 
             continue;
@@ -578,21 +578,21 @@ for (var i = 0; i < els.length; i++) {
             var zindex_check_result = zindex_check(r_el, el);
             if (zindex_check_result.result) {
                 var f_el_idx = r_el.indexOf(zindex_check_result.f_el);
-                r_el[f_el_idx] = set_element_data(el, "null", "click", arguments[0], 'button', el_id);
+                r_el[f_el_idx] = set_element_data(el, "null", "click", 'WEBVIEW', 'button', el_id);
                 continue;
             }
         }
     }
 
     if (size_check && (has_change_event_check || has_on_change_event_check) && point_el_check) {
-        var element_data = set_element_data(el, "null", "spinner", arguments[0], 'spinner', el_id);
+        var element_data = set_element_data(el, "null", "spinner", 'WEBVIEW', 'spinner', el_id);
         check_interect_data_and_set_element(r_el, el, element_data);
 
         continue;
     }
 
     if (size_check && point_el_check) {
-        dom_el.push(set_element_data(el, "null", "none", arguments[0], el.tagName, el_id));
+        dom_el.push(set_element_data(el, "null", "none", 'WEBVIEW', el.tagName, el_id));
         continue;
     }
 }
