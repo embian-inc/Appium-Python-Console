@@ -3,7 +3,7 @@
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
-#
+
 #     http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
@@ -29,7 +29,7 @@ def get_desired_capabilities( platform_version, device_name, app):
         'noSign': True,
         'newCommandTimeout': 3600,
         'autoGrantPermissions': True,
-        'automationName': 'uiautomator2',
+        # 'automationName': 'uiautomator2',
         'androidInstallTimeout': 360000
     }
 

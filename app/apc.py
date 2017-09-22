@@ -39,6 +39,7 @@ class AppiumPythonConsole(unittest.TestCase):
 
     # Test_
     def test_manual(self):
+
         self.finish = True
         self.cmd = {
             'help': self._help,
@@ -64,8 +65,10 @@ class AppiumPythonConsole(unittest.TestCase):
     #   Write the '--mode=m' option on executing main.py
     #   if you want to start Manual Test Mode
     def _read_func(self):
-        if self.mode == 'Manual_Test' or self.mode == 'dev':
+        if self.mode == 'Manual_Test':
             return self._manual_test()
+        elif self.mode == 'dev':
+            return self._manual_test('h')
         else:
             return None
 
@@ -82,7 +85,7 @@ class AppiumPythonConsole(unittest.TestCase):
         self.finish = True
         raise SystemExit
     # Change Manual Test Mode Command
-    def _manual_test(self, mode='h'):
+    def _manual_test(self, mode='n'):
         self.finish = False
         self.driver.switch_to.context('NATIVE_APP')
         self.native_only = False if mode is 'h' else True

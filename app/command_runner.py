@@ -37,7 +37,7 @@ class CommandRunner(object):
     # Print action list table
     def print_action_table(self, pagedata, detail=None, mode=None):
         actions = pagedata['actions'] if 'actions' in pagedata else []
-        header = ['No.','WIDGET', 'RESOURCE-ID', 'CONTENT-DESC', 'BOUNDS','ACTION', 'CONTEXT']
+        header = ['No.','WIDGET', 'RESOURCE-ID', 'CONTENT-DESC', 'TEXT', 'BOUNDS','ACTION', 'CONTEXT']
         if mode == 'dev':
             header = ['No.', 'DESC', 'LABEL', 'ACTION', 'BOUNDS', 'CONTEXT']
 

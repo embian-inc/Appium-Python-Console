@@ -77,6 +77,7 @@ class ActionCollector(object):
                 'screen_id': screen_id,
                 'resource-id': action.resource_id,
                 'content-desc': action.content_desc,
+                'text': action.text,
                 'widget': action.e_class
                 # 'obj_actions':ActionObject(cnt,
                 #        action.desc,

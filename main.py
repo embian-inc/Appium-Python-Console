@@ -5,7 +5,8 @@ from app.apc import AppiumPythonConsole
 import app.command as command
 import app.ko as ko
 
-sys.setdefaultencoding('utf-8')
+reload(sys)  # Reload does the trick!
+sys.setdefaultencoding('UTF8')
 
 if __name__ == "__main__":
     try:

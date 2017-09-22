@@ -9,7 +9,7 @@ input_type_text_list = ["text", "search", "password", "textarea", "email", "numb
 input_type_etc_list = ["date", "color", "datetime", "month", "range", "time", "week"]
 
 def set_js_script():
-    file_path = os.path.join('app', 'apptestai_modules', 'webview', 'execute_script.js')
+    file_path = os.path.join('app', 'execute_script.js')
     with open(file_path, 'r') as ac_script:
         js_script = ac_script.read()
 
