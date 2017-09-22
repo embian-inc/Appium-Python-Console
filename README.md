@@ -11,6 +11,8 @@ Appium 설치 전 이라면 [Appium Setup Manual](https://github.com/embian-inc/
 
 ## 1. Install Appium-Python-Console
 
+Python 2.7 version을 이용해 주시기 바랍니다.
+
 ##### 1) Git Clone 및 Appium-Python-Console폴더로 이동
 
 ###### 아래 링크에 있는 APC Git Repository를 복제 합니다.
