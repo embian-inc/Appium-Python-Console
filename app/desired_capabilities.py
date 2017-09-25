@@ -15,17 +15,12 @@
 import os
 import app.config as config
 
-# Returns abs path relative to this file and not cwd
-PATH = lambda p: os.path.abspath(
-    os.path.join(os.path.dirname(__file__), p)
-)
-
 def get_desired_capabilities( platform_version, device_name, app):
     desired_caps = {
         'platformName': 'Android',
         'platformVersion': platform_version,
         'deviceName': device_name,
-        'app': PATH( config.APK_FILE_DIR + app),
+        'app': os.path.join(config.APK_FILE_DIR, app),
         'noSign': True,
         'newCommandTimeout': 3600,
         'autoGrantPermissions': True,
