@@ -6,8 +6,8 @@
 
 ## 1. Appium 실행을 위한 필수 프로그램 설치 및 환경변수 설정
 
-#### 1) Oracle-Java8-Installer install
-###### * for Linux
+#### 1) Oracle-Java8-Installer 설치
+###### * Linux
 ```
 $ sudo add-apt-repository ppa:webupd8team/java
 $ sudo apt-get update
@@ -17,38 +17,38 @@ $ sudo apt-get update
 
 $ sudo apt-get install oracle-java8-installer
 
-# java version check
+# 설치완료 후 확인 ( 버전 정보가 출력 되면 됨 )
 $ java -version
 ```
 
-###### * for Mac osx
+###### * Mac osx
 ```
 # NOTE - osx check java version before installation.
 
 $ brew cask install caskroom/cask/java
 
-# java version check
+# 설치완료 후 확인 ( 버전 정보가 출력 되면 됨 )  
 $ java -version
 ```
 
 
-#### 2) Android-sdk install
-###### * for Linux
+#### 2) Android-sdk 설치
+###### * Linux
 ```
-# for linux:
+# linux:
 
 $ sudo apt-get install android-sdk
 $ sudo ln -s  /usr/lib/android-sdk /opt/android-sdk
 ```
 
-###### * for Mac osx
+###### * Mac osx
 ```
 $ brew cask install caskroom/cask/android-sdk
 ```
 
 
-#### 3) edit Environment Variable PATH  ($JAVA_HOME, $ANDROID_HOME)
-###### * for Linux
+#### 3) 환경변수 PATH 설정 ($JAVA_HOME, $ANDROID_HOME)
+###### * Linux
 ```
 # 환경변수 추가
 $ vi ~/.bashrc
@@ -61,7 +61,7 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 $ source ~/.bashrc
 ```
 
-###### * for Mac osx
+###### * Mac osx
 ```
 # 환경변수 추가
 $  vi ~/.bash_profile
@@ -75,16 +75,17 @@ $ . ~/.bash_profile
 ```
 
 
-#### 4) Nodejs, npm install
+#### 4) Nodejs, npm 설치
 ###### * Linux
 ```
 $ sudo apt-get install nodejs-legacy npm
 
-# node version check
+# 설치가 제대로 되었는지 확인 하는 방법
 $ node -v
 >> 4.2.6
 $ npm -v
 >> 3.x.x
+# 버전정보가 출력 되면 완료
 
 [npm global permission setting]
 $ mkdir ~/.npm-global
@@ -102,11 +103,12 @@ $ source ~/.profile
 ```
 $ brew install node npm
 
-# node version check
+# 설치가 제대로 되었는지 확인 하는 방법
 $ node -v
 >> v8.3.0
 $ npm -v
 5.3.0
+# 버전정보가 출력 되면 완료
 
 [npm global permission setting]
 $ mkdir ~/.npm-global
@@ -124,7 +126,7 @@ $ . ~/.bash_profile
 
 
 
-## 2. Appium install
+## 2. Appium 설치
 
 #### 2.0 Appium Install
 
@@ -138,23 +140,25 @@ $ appium &               # start appium
 #### 2.1 Appium Github Clone
 Link : [https://github.com/appium/appium]
 
-1) Download Appium source into your PC
+1) Git을 이용하여 Appium Project Clone
 ```
 $ git clone https://github.com/appium/appium.git﻿﻿
+```
 
+2) Clone 한 Appium 폴더로 이동
+```
 $ cd appium
 ```
 
-
-2) NPM Install
+3) NPM Install
 ```
 $ npm install
 ```
 
-3) Run Appium [ node .(dot) ]
+4) Appium 실행 [ node .(dot) ]
 ```
 $ node .
-# If you see following messages, Appium started successfully.
+# 아래와 같은 메세지가 출력 되면 Appium 실행 완료
 [Appium] Welcome to Appium v1.7.0-beta (REV cf24a80809309fb5467099e570cddd256cacbb28)
 [Ap﻿pium] Appium REST http interface listener started on 0.0.0.0:4723
 ```
@@ -175,7 +179,7 @@ Error: Cannot find module '/Users/han/Documents/appium-1.6.5'
 # Error Case 2 :
 npm install 실행 후 Appium 프로젝트 폴더에 build 라는 폴더가 있는지 확인 없을 경우 다음 명령줄 실행
 
-# Resolve
+# 해결법
 $ sudo xcode-select --switch /Library/Developer/CommandLineTools
 ```
 
@@ -186,11 +190,11 @@ Link : [https://github.com/appium/appium/releases]
 
 1) 위 링크에서 원하는 버전의 Appium 압축 파일 다운로드
 
-2) Extract Appium
+2) 압축풀기
 ```
 $ cd PATH/TO/DOWNLOAD/FOLDER
 
-# tar.gz Extract
+# tar.gz 압축풀기
 $ tar -zxvf appium-1.6.x.tar.gz TARGET/PATH
 
 ex) tar -zxvf appium-1.6.3.tar.gz ~/Documents/appium-1.6.3
@@ -208,7 +212,7 @@ $ cd appium-1.6.3
 $ npm install
 ```
 
-5) Run Appium [ node .(dot) ]
+5) Appium 실행 [ node .(dot) ]
 
 ```
 $ node .

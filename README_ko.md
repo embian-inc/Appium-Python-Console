@@ -11,7 +11,7 @@ Appium의 Python Client를 사용하여 테스트 스크립트를 작성하는 �
 ## 1. Install Appium-Python-Console
 
 Appium 설치를 위해서는 Oracle-Java8-Installer, Android-SDK, Node.js, NPM 의 설치 및 PATH설정이 선행되어 있어야 합니다.
-위 항목이 아직 설치가 안되어 있다면 [Appium Setup Manual](https://github.com/embian-inc/Appium-Python-Console/blob/master/README-AppiumSetup.md)을 통해 설치를 완료한 뒤 다음을 진행해 주시기 바랍니다.
+위 항목이 아직 설치가 안되어 있다면 [Appium Setup Manual](https://github.com/embian-inc/Appium-Python-Console/blob/master/README_ko-AppiumSetup.md)을 통해 설치를 완료한 뒤 다음을 진행해 주시기 바랍니다.
 
 Python 2.7 version을 이용해 주시기 바랍니다.
 
