@@ -11,7 +11,7 @@ from desired_capabilities import get_desired_capabilities
 from command_runner import CommandRunner
 from modules.action_collector import ActionCollector
 from bs4 import BeautifulSoup
-from apptestai_modules.utils.rect import Bounds, Point
+from modules.rect import Bounds, Point
 
 class AppiumPythonConsole(unittest.TestCase):
     apk_filename = ''

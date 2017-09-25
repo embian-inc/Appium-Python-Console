@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from bs4 import BeautifulSoup, Tag
-from apptestai_modules.utils.rect import Bounds, Point
+from modules.rect import Bounds, Point
 import traceback
 
 from modules.action_table import ActionTable
