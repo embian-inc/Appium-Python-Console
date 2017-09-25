@@ -15,7 +15,7 @@ APK_FILE_DIR = os.path.join(PROJECT_ROOT_PATH, 'apk_files')
 # Only Change following line (apk file name)
 ##################################################################
 # APK_FILE_NAME = 'com.abc.app.apk'
-APK_FILE_NAME = 'musinsa.apk'
+APK_FILE_NAME = 'embian.only.apk'
 
 
 ##################################################################
