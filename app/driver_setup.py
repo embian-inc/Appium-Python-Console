@@ -1,4 +1,5 @@
 import sys, os, time, imp, glob, subprocess, platform
+import ko, en
 from appium import webdriver
 from desired_capabilities import get_desired_capabilities
 
@@ -11,7 +12,10 @@ def set_config(self):
     config_filename = os.path.join('app','config.py')
     self.native_only = False
     self.lang = 'en-us'
+    self.BANNER = en.APC_BANNER
+    self.HELP = en.HELP_MSG
     self.mode = 'APC'
+    
     for v in sys.argv:
         if '--config' in v:
             t = v.split('=')
@@ -25,6 +29,8 @@ def set_config(self):
                 self.adb_cmd = t[1]
         if '-kor' in v:
             self.lang = 'ko-kr'
+            self.BANNER = ko.APC_BANNER
+            self.HELP = ko.HELP_MSG
         if '--mode' in v:
             t = v.split('=')
             if len(t) == 2 and t[1] == 'm':

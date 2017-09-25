@@ -33,4 +33,4 @@ PLATFORM_VERSION = '7.1'
 # Only Change following line (apk file name)
 ##################################################################
 # APK_FILE_NAME = 'com.abc.app.apk'
-APK_FILE_NAME = 'findjob.apk'
+APK_FILE_NAME = 'musinsa.apk'

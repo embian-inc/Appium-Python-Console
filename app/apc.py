@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
 
 import unittest, time, sys, os, re, imp, glob, subprocess, platform, code, codecs, traceback, pydoc, pprint, inspect, types
-import driver_setup, ko
+import driver_setup, en, ko
 import native_manager, webview_manager
 
 from driver_methods import METHODS
@@ -56,7 +56,7 @@ class AppiumPythonConsole(unittest.TestCase):
         try:
             sys.ps1 = PS1LineCounter()
             sys.ps2 = PS2LineCounter()
-            code.interact(ko.APC_BANNER, readfunc=self._read_func(), local = self.cmd)
+            code.interact(self.BANNER, readfunc=self._read_func(), local = self.cmd)
         except SystemExit:
             self.finish = True
             print "Terminate APC.."
@@ -74,7 +74,7 @@ class AppiumPythonConsole(unittest.TestCase):
 
     # HELP Command
     def _help(self):
-        print ko.HELP_MSG
+        print self.HELP
 
     # Clear Console Command
     def _clear(self):

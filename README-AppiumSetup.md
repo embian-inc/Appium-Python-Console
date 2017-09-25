@@ -17,11 +17,11 @@ $ sudo apt-get update
 
 $ sudo apt-get install oracle-java8-installer
 
-# 설치완료 후 확인 ( 버전 정보가 출력 되면 됨 ) 
+# 설치완료 후 확인 ( 버전 정보가 출력 되면 됨 )
 $ java -version
 ```
 
-###### * Mac osx 
+###### * Mac osx
 ```
 # NOTE - osx check java version before installation.
 
@@ -35,15 +35,15 @@ $ java -version
 #### 2) Android-sdk 설치
 ###### * Linux
 ```
-# linux: 
-   
+# linux:
+
 $ sudo apt-get install android-sdk
 $ sudo ln -s  /usr/lib/android-sdk /opt/android-sdk
 ```
 
-###### * Mac osx 
+###### * Mac osx
 ```
-$ brew cask install caskroom/cask/android-sdk 
+$ brew cask install caskroom/cask/android-sdk
 ```
 
 
@@ -61,7 +61,7 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 $ source ~/.bashrc
 ```
 
-###### * Mac osx 
+###### * Mac osx
 ```
 # 환경변수 추가
 $  vi ~/.bash_profile
@@ -83,7 +83,7 @@ $ sudo apt-get install nodejs-legacy npm
 # 설치가 제대로 되었는지 확인 하는 방법
 $ node -v
 >> 4.2.6
-$ npm -v 
+$ npm -v
 >> 3.x.x
 # 버전정보가 출력 되면 완료
 
@@ -99,14 +99,14 @@ export PATH=$PATH:~/.npm-global/bin
 $ source ~/.profile
 ```
 
-###### * Mac osx 
+###### * Mac osx
 ```
 $ brew install node npm
 
 # 설치가 제대로 되었는지 확인 하는 방법
 $ node -v
 >> v8.3.0
-$ npm -v 
+$ npm -v
 5.3.0
 # 버전정보가 출력 되면 완료
 
@@ -127,8 +127,15 @@ $ . ~/.bash_profile
 
 
 ## 2. Appium 설치
-Appium 설치는 2.1 Github Clone, 2.2 Github Release Download, 2.3 Appium Desktop Download 총 3가지 방법이 있다.
 
+#### 2.0 Appium Install
+
+```
+$ brew install node      # get node.js
+$ npm install -g appium  # get appium
+$ npm install wd         # get appium client
+$ appium &               # start appium
+```
 
 #### 2.1 Appium Github Clone
 Link : [https://github.com/appium/appium]
@@ -219,6 +226,3 @@ Link : [http://appium.io/]
 2) Download Appium 을 통해 Appium Desktop download 페이지로 이동
 
 3) Appium Desktop 파일 다운 로드 후 실행
-
-
-

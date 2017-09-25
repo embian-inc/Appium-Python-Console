@@ -8,9 +8,6 @@ from appium import webdriver
 from terminaltables import AsciiTable
 from bs4 import BeautifulSoup
 
-# from owyl_bt import ApptestBT, ApptestBTPageDetect
-# from owyl_bt.owyl import blackboard
-
 # monkey patching prettify
 _stdin_encoding = sys.stdin.encoding or 'utf-8'
 orig_prettify = BeautifulSoup.prettify
@@ -21,12 +18,7 @@ def prettify(self, encoding=None, formatter="minimal", indent_width=4):
 BeautifulSoup.prettify = prettify
 
 class CommandRunner(object):
-    ## for Behavior Tree
-    # apptestBTPageDetect = None
-    # bb = blackboard.Blackboard('apptest')
-    # bb['last_cmd'] = []
     behavior = None
-
     r_cnt = 0
 
     def __init__(self):
@@ -239,54 +231,6 @@ class CommandRunner(object):
             elif command.is_exit(choice):
                 print 'Terminate Manual Test Mode.\n'
                 return True
-
-            # elif command.is_load(choice):
-            #     print 'loading behavior'
-            #     self.behavior=behavior._sample_behavior(behavior.aliases)
-            #     behavior._print_behavior(self.behavior)
-            #     return False
-
-            # elif command.is_explain(choice):
-            #     print 'explaining behavior'
-            #     behavior._explain_behavior(data)
-            #     return False
-            #
-            # elif command.is_next(choice):
-            #     print 'next task'
-            #     behavior._print_behavior(self.behavior)
-            #     new_task=behavior._next_behavior(data)
-            #     if new_task['cmd'] < 0:
-            #         return False
-            #
-            #     # otherwise, just execute with predefined value
-            #     idx=new_task['cmd']
-            #     extra_sleep=new_task['sleep']
-            #     data['actions'][idx]['value']=new_task['edit']
-
-            # elif command.is_bt(choice):
-            #     if self.r_cnt > 1:
-            #         print "Action does not exist...Terminate apc.py !"
-            #         return True
-            #     if len(data['actions']) < 1:
-            #         self.r_cnt += 1
-            #         sleep(3)
-            #         return False
-            #     self.r_cnt = 0
-            #     print '......:: Behavior Tree Recommandation'
-            #     self.apptestBTPageDetect = ApptestBTPageDetect.ApptestBTPageDetect(self.bb)
-            #     self.bb['page_info'] = data['actions']
-            #     results = [x for x in self.apptestBTPageDetect.tree]
-            #     if self.bb['recomm_idx'] < 0:
-            #         print "Try all possible actions... Reset BT"
-            #         return False
-            #     else:
-            #         idx = self.bb['recomm_idx']
-            #         # print 'Behavior Tree Choose Action : %d'% idx
-            # elif command.is_empty_bt(choice):
-            #     self.bb = blackboard.Blackboard('apptest')
-            #     self.bb['last_cmd'] = []
-            #     self.apptestBTPageDetect = None
-            #     self.r_cnt = 0
 
             else:
                 idx = -1
