@@ -187,7 +187,7 @@ def _remove_webview(soup):
 
 def to_clean_xml(xml, without_webview=False):
     # clean webview
-    soup = BeautifulSoup(xml, "xml", from_encoding="utf-8")
+    soup = BeautifulSoup(xml, "xml")
     if without_webview:
         _remove_webview(soup)
 
@@ -200,7 +200,7 @@ def get_actions(driver, xml, without_webview=True, context='NATIVE_APP'):
     actions = []
 
     # clean webview
-    soup = BeautifulSoup(xml, "xml", from_encoding="utf-8")
+    soup = BeautifulSoup(xml, "xml")
     if without_webview:
         _remove_webview(soup)
 
@@ -228,7 +228,7 @@ def get_actions_only_native(driver, xml, context='NATIVE_APP'):
     actions = []
 
     # clean webview
-    soup = BeautifulSoup(xml, "xml", from_encoding="utf-8")
+    soup = BeautifulSoup(xml, "xml")
 
     if has_visible_node(soup):
         clean_invisible_nodes(soup.hierarchy)

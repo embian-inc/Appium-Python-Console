@@ -56,7 +56,7 @@ class AppiumPythonConsole(unittest.TestCase):
         try:
             sys.ps1 = PS1LineCounter()
             sys.ps2 = PS2LineCounter()
-            code.interact(self.BANNER, readfunc=self._read_func(), local = self.cmd)
+            code.interact(self.BANNER.encode(sys.stdout.encoding, 'ignore'), readfunc=self._read_func(), local = self.cmd)
         except SystemExit:
             self.finish = True
             print "Terminate APC.."
@@ -99,7 +99,7 @@ class AppiumPythonConsole(unittest.TestCase):
     def _page(self, cond=None):
         orig_c = self.set_context_to_native()
         xml = self.driver.page_source
-        soup = BeautifulSoup(xml, "xml", from_encoding='utf-8')
+        soup = BeautifulSoup(xml, "xml")
 
         els = soup.find_all(self.has_id_desc_bounds_text)
         for e in els:
@@ -252,7 +252,7 @@ class AppiumPythonConsole(unittest.TestCase):
         return webviews
 
     def get_enable_webview_list(self, xml):
-        soup = BeautifulSoup(xml, "xml", from_encoding='utf-8')
+        soup = BeautifulSoup(xml, "xml")
 
         webviews = soup.find_all('android.webkit.WebView')
         enabled_webviews = []

@@ -54,7 +54,7 @@ class CommandRunner(object):
             # ]
             row = ['%03d' % cnt]
             for key in keys:
-                row.append(el[key.lower()])
+                row.append(el[key.lower()].encode(sys.stdout.encoding, 'ignore'))
             row.append(el['type'])
 
             if self.stored_opt['detail'] or detail == 'd':
@@ -175,7 +175,7 @@ class CommandRunner(object):
                 now_context_num = data['now_context_num']
                 orig_context = data['contexts'][now_context_num]
                 data['driver'].switch_to.context(data['contexts'][int(c_num)])
-                soup = BeautifulSoup(data['driver'].page_source, bs4_type, from_encoding='utf-8')
+                soup = BeautifulSoup(data['driver'].page_source, bs4_type)
                 print '\n'
                 print soup.prettify
                 print '\n'

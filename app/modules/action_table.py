@@ -73,7 +73,7 @@ class ActionTable(object):
     #     },
     # ]
     def __init__(self, xml_data, webview=None):
-        self.tree = BeautifulSoup(xml_data, "xml", from_encoding="utf-8")
+        self.tree = BeautifulSoup(xml_data, "xml")
         self.webview = webview
         self.action_groups = []
         self._init()
