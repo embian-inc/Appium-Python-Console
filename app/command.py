@@ -5,7 +5,6 @@ import sys, ko, en
 command = en.command
 for v in sys.argv:
     if '-kor' in v:
-        self.lang = 'ko-kr'
         command = ko.command
 
 # Help

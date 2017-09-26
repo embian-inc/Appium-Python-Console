@@ -59,16 +59,16 @@ HELP_MSG = """
 """
 
 command = {
-    'HELP'                  : { 'cmd': ['help', 'h'], 'desc': u'Help. Print all available Manual Test Mode commands' },
-    'PAGE'                  : { 'cmd': ['page_source', 'p'], 'desc': u'Appium WebDriver\'s page_source' },
-    'DETAIL'                : { 'cmd': ['detail', 'd'], 'desc': u'Print Action Table with Xpath' },
-    'BACK'                  : { 'cmd': ['back', 'b'], 'desc': u'Mobile Back Button' },
-    'REFRESH'               : { 'cmd': ['refresh', 'r'], 'desc': u'Retry ' },
-    'SCROLL_UP'             : { 'cmd': ['sup', 'scrollup', 'up'], 'desc': u'Scroll UP' },
-    'SCROLL_DOWN'           : { 'cmd': ['sdown', 'scrolldown', 'down'], 'desc': u'Scroll Down'},
-    'SAVE_ALL'              : { 'cmd': ['save_all'], 'desc': u'Save All Files (XML, HTML, ScreenShot Image) of Current page' },
-    'XML'                   : { 'cmd': ['xml_save'], 'desc': u'Save XML on Current Page' },
-    'HTML'                  : { 'cmd': ['html_save'], 'desc': u'Save HTML on Current Page' },
-    'SCREENSHOT'            : { 'cmd': ['screenshot_save', 'ss_save'], 'desc': u'Save Screenshot Image on Current Page' },
-    'EXIT'                  : { 'cmd': ['exit', 'quit', 'q'], 'desc': u'Terminate Manual Test Mode and Return to APC Mode' }
+    'HELP'                  : { 'cmd': ['help', 'h'], 'desc': 'Help. Print all available Manual Test Mode commands' },
+    'PAGE'                  : { 'cmd': ['page_source', 'p'], 'desc': 'Appium WebDriver\'s page_source' },
+    'DETAIL'                : { 'cmd': ['detail', 'd'], 'desc': 'Print Action Table with Xpath' },
+    'BACK'                  : { 'cmd': ['back', 'b'], 'desc': 'Mobile Back Button' },
+    'REFRESH'               : { 'cmd': ['refresh', 'r'], 'desc': 'Retry ' },
+    'SCROLL_UP'             : { 'cmd': ['sup', 'scrollup', 'up'], 'desc': 'Scroll UP' },
+    'SCROLL_DOWN'           : { 'cmd': ['sdown', 'scrolldown', 'down'], 'desc': 'Scroll Down'},
+    'SAVE_ALL'              : { 'cmd': ['save_all'], 'desc': 'Save All Files (XML, HTML, ScreenShot Image) of Current page' },
+    'XML'                   : { 'cmd': ['xml_save'], 'desc': 'Save XML on Current Page' },
+    'HTML'                  : { 'cmd': ['html_save'], 'desc': 'Save HTML on Current Page' },
+    'SCREENSHOT'            : { 'cmd': ['screenshot_save', 'ss_save'], 'desc': 'Save Screenshot Image on Current Page' },
+    'EXIT'                  : { 'cmd': ['exit', 'quit', 'q'], 'desc': 'Terminate Manual Test Mode and Return to APC Mode' }
 }

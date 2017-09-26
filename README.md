@@ -2,6 +2,7 @@
 
 [TOC]
 
+## [APC](https://embian.com/apc_en.html)
 
 APC(Appium Python Console) is a python port of famous ARC(Appium Ruby Console), which
 provides easy to use interactive REPL-scripting environment for Android GUI test
@@ -180,8 +181,8 @@ $ python main.py
 
 ## 3. Manual Test Mode Usage
 
-1)	During Manul Test Mode, clickable/do-able actions in current page is listed as each row in the Action Table List.   
+1)	During Manual Test Mode, clickable/do-able actions in current page is listed as each row in the Action Table List.   
 2)	If you want to execute the specific action in Action Table List, you can enter the row ID number.
 3)	The row ID entered is action without additional input (such as button press), it execute the action by sending "button-pressed event". Otherwise,
-if the row ID indicates "edittext", it immmediately asks you to type additional input and then proceeds to finish that action.
+if the row ID indicates "edittext", it immediately asks you to type additional input and then proceeds to finish that action.
 4)	When the action finishes, it refresh the page automatically, and repeat to step 1.
