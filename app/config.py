@@ -13,9 +13,11 @@ APK_FILE_DIR = os.path.join(PROJECT_ROOT_PATH, 'apk_files')
 
 ##################################################################
 # Only Change following line (apk file name)
+# Apk File's location is under the APK_FILE_DIR ('/RootProject/apk_files')
 ##################################################################
 # APK_FILE_NAME = 'com.abc.app.apk'
-APK_FILE_NAME = 'embian.only.apk'
+# APK_FILE_NAME = 'embian.only.apk'
+APK_FILE_NAME = 'bbc.mobile.news.ww.apk'
 
 
 ##################################################################
@@ -24,5 +26,5 @@ APK_FILE_NAME = 'embian.only.apk'
 # when there is only one device attached to your pc
 ##################################################################
 PLATFORM_NAME = 'Android'
-DEVICE_NAME = '7387d0d19904'
-PLATFORM_VERSION = '7.1'
+DEVICE_NAME = 'Device UDID'
+PLATFORM_VERSION = 'Device Platform Version (ex. 8, 8.1, 9, etc...)'
